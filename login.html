@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Companion site - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header portal-header">
+    <a class="brand" href="index.html">Campus Companion</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#features">Features</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page portal-section" id="portal" aria-label="Campus Companion account portal">
+      <section class="intro" aria-label="Campus Companion introduction">
+        <h1>Campus Companion site</h1>
+        <p>Access your campus space for student services, class updates, and learning support from one simple portal.</p>
+        <div class="campus-preview">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Students walking on a campus pathway">
+          <div>
+            <h2>Built around everyday campus life</h2>
+            <p>Students can sign in for academic updates, while lecturers get a controlled access point after admin approval.</p>
+          </div>
+        </div>
+        <div class="quick-points" aria-label="Campus Companion highlights">
+          <span>Class updates</span>
+          <span>Student access</span>
+          <span>Lecturer approval</span>
+        </div>
+      </section>
+
+      <section class="auth-card" aria-label="Account access">
+        <div class="role-tabs" aria-label="Choose account type">
+          <button class="active" type="button" data-role="student">Student</button>
+          <button type="button" data-role="lecturer">Lecturer</button>
+          <button type="button" data-role="admin">Admin</button>
+        </div>
+
+        <div class="panel" id="studentPanel">
+          <div class="form-tabs" aria-label="Choose student form">
+            <button class="active" type="button" data-form="loginForm">Login</button>
+            <button type="button" data-form="registerForm">Register</button>
+          </div>
+
+          <form class="form active" id="loginForm" novalidate>
+            <h2>Student Login</h2>
+            <p class="subtitle">Sign in with your registered student details.</p>
+
+            <div class="field">
+              <label for="loginName">Name</label>
+              <input id="loginName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="loginEmail">Email</label>
+              <input id="loginEmail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="loginPassword">Password</label>
+              <input id="loginPassword" type="password" autocomplete="current-password" required>
+            </div>
+
+            <button class="submit-btn" type="submit">Login</button>
+            <div class="message" id="loginMessage" role="alert"></div>
+          </form>
+
+          <form class="form" id="registerForm" novalidate>
+            <h2>Student Register</h2>
+            <p class="subtitle">Create your student account before logging in.</p>
+
+            <div class="field">
+              <label for="registerName">Name</label>
+              <input id="registerName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="registerEmail">Email</label>
+              <input id="registerEmail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="registerPassword">Create Password</label>
+              <input id="registerPassword" type="password" autocomplete="new-password" required>
+            </div>
+
+            <div class="field">
+              <label for="confirmPassword">Confirm Password</label>
+              <input id="confirmPassword" type="password" autocomplete="new-password" required>
+            </div>
+
+            <button class="submit-btn" type="submit">Create Account</button>
+            <div class="message" id="registerMessage" role="alert"></div>
+          </form>
+        </div>
+
+        <div class="panel" id="lecturerPanel" hidden>
+          <div class="lecturer-tabs" aria-label="Choose lecturer form">
+            <button class="active" type="button" data-lecturer-form="lecturerLoginForm">Login</button>
+            <button type="button" data-lecturer-form="lecturerRegisterForm">Register</button>
+          </div>
+
+          <form class="form active" id="lecturerLoginForm" novalidate>
+            <h2>Lecturer Login</h2>
+            <p class="subtitle">Login only works after an admin approves your account.</p>
+
+            <div class="field">
+              <label for="lecturerLoginName">Name</label>
+              <input id="lecturerLoginName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="lecturerLoginEmail">Email</label>
+              <input id="lecturerLoginEmail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="lecturerLoginPassword">Password</label>
+              <input id="lecturerLoginPassword" type="password" autocomplete="current-password" required>
+            </div>
+
+            <button class="submit-btn" type="submit">Login</button>
+            <div class="message" id="lecturerMessage" role="alert"></div>
+          </form>
+
+          <form class="form" id="lecturerRegisterForm" novalidate>
+            <h2>Lecturer Register</h2>
+            <p class="subtitle">Submit your lecturer account for admin approval.</p>
+
+            <div class="field">
+              <label for="lecturerRegisterName">Name</label>
+              <input id="lecturerRegisterName" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="lecturerRegisterEmail">Email</label>
+              <input id="lecturerRegisterEmail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="lecturerRegisterPassword">Create Password</label>
+              <input id="lecturerRegisterPassword" type="password" autocomplete="new-password" required>
+            </div>
+
+            <div class="field">
+              <label for="lecturerConfirmPassword">Confirm Password</label>
+              <input id="lecturerConfirmPassword" type="password" autocomplete="new-password" required>
+            </div>
+
+            <button class="submit-btn" type="submit">Request Approval</button>
+            <div class="message" id="lecturerRegisterMessage" role="alert"></div>
+          </form>
+        </div>
+
+        <div class="panel" id="adminPanel" hidden>
+          <form class="form active" id="adminLoginForm" novalidate>
+            <h2>Admin Login</h2>
+            <p class="subtitle">Approve lecturer accounts from this area.</p>
+
+            <div class="field">
+              <label for="adminEmail">Email</label>
+              <input id="adminEmail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="adminPassword">Password</label>
+              <input id="adminPassword" type="password" autocomplete="current-password" required>
+            </div>
+
+            <button class="submit-btn" type="submit">Login as Admin</button>
+            <div class="message" id="adminLoginMessage" role="alert"></div>
+          </form>
+
+          <div id="adminControls" hidden>
+            <h2>Admin Approval</h2>
+            <p class="subtitle">Review the latest lecturer request before approving access.</p>
+
+            <div class="pending-card" id="pendingLecturerCard">
+              <strong id="pendingLecturerName">No lecturer request</strong>
+              <p id="pendingLecturerEmail">Lecturer registration details will appear here.</p>
+            </div>
+
+            <div class="admin-box">
+              <h3>Lecturer Account</h3>
+              <p>Approve the lecturer only if the registration details look correct.</p>
+              <div class="admin-actions">
+                <button class="small-btn" type="button" id="approveLecturerButton">Approve Lecturer</button>
+                <button class="logout-btn" type="button" id="adminLogoutButton">Logout</button>
+              </div>
+              <div class="message" id="adminMessage" role="alert"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+          <h2>Welcome, <span id="studentName"></span></h2>
+          <div class="dashboard-card">
+            <p>You are logged in to the student side of Campus Companion site.</p>
+          </div>
+          <button class="logout-btn" type="button" id="logoutButton">Logout</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

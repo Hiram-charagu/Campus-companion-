@@ -1,0 +1,5 @@
+.table-card { animation: fade-up 0.45s ease both; }
+.course-title { color: var(--text); font-weight: 800; }
+.unit-cell { color: var(--muted); }
+.empty-row td { padding: 42px; color: var(--muted); text-align: center; }
+@media (max-width: 520px) { .filters .select-control { width: 100%; } }

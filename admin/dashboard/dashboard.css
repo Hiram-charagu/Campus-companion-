@@ -1,0 +1,22 @@
+.welcome-card { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px; overflow: hidden; margin-bottom: 22px; padding: 27px 30px; border-radius: var(--radius-lg); background: linear-gradient(120deg, #0f766e, #2563eb); box-shadow: 0 13px 28px rgba(15, 118, 110, 0.23); color: #fff; animation: fade-up 0.4s ease both; }
+.welcome-card::before { position: absolute; top: -75px; right: 90px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); content: ''; }
+.welcome-card h2 { position: relative; font-size: 23px; }
+.welcome-card p:not(.eyebrow) { position: relative; margin-top: 6px; color: rgba(255, 255, 255, 0.82); font-size: 13px; }
+.welcome-card .eyebrow { position: relative; color: #ccfbf1; }
+.welcome-icon { position: relative; font-size: 57px; animation: soft-float 3s ease-in-out infinite; }
+.approval-list { display: grid; gap: 11px; }
+.approval-item { display: flex; align-items: center; gap: 10px; padding: 11px; border: 1px solid var(--border); border-radius: 11px; transition: var(--transition); }
+.approval-item:hover { transform: translateX(4px); border-color: #99f6e4; background: #f0fdfa; }
+.approval-avatar { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: 800; }
+.approval-item div { flex: 1; }
+.approval-item strong { display: block; font-size: 12px; }
+.approval-item small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.quick-actions { display: grid; gap: 11px; }
+.quick-action { display: flex; align-items: center; gap: 11px; padding: 12px; border: 1px solid var(--border); border-radius: 11px; transition: var(--transition); }
+.quick-action:hover { transform: translateY(-2px); border-color: #99f6e4; box-shadow: var(--shadow-sm); }
+.quick-action > span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 10px; background: var(--primary-light); }
+.quick-action strong, .quick-action small { display: block; }
+.quick-action strong { font-size: 12px; }
+.quick-action small { margin-top: 3px; color: var(--muted); font-size: 10px; }
+body.dark .approval-item:hover { background: #173b42; }
+@media (max-width: 520px) { .welcome-card { padding: 22px; } .welcome-icon { font-size: 42px; } }

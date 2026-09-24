@@ -1,0 +1,13 @@
+.content { display: grid; max-width: 1080px; gap: 20px; }
+.settings-card { overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-sm); animation: fade-up 0.4s ease both; transition: var(--transition); }
+.settings-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.settings-heading { display: flex; align-items: center; gap: 13px; padding: 18px 22px; border-bottom: 1px solid var(--border); background: linear-gradient(120deg, #fff, #f0fdfa); }
+.settings-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; background: var(--primary-light); font-size: 19px; }
+.settings-heading h2 { font-size: 16px; }
+.settings-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 16px 22px; border-bottom: 1px solid var(--border); transition: background 0.2s ease; }
+.settings-row:last-child { border-bottom: 0; }.settings-row:hover { background: #f8fffe; }
+.settings-row h3 { font-size: 13px; }.settings-row p { max-width: 650px; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.toggle { position: relative; display: inline-block; width: 48px; height: 28px; flex: 0 0 48px; }.toggle input { width: 0; height: 0; opacity: 0; }.toggle-slider { position: absolute; inset: 0; border-radius: 99px; background: #d5dce7; cursor: pointer; transition: var(--transition); }.toggle-slider::before { position: absolute; bottom: 4px; left: 4px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2); content: ''; transition: var(--transition); }.toggle input:checked + .toggle-slider { background: var(--primary); }.toggle input:checked + .toggle-slider::before { transform: translateX(20px); }.toggle input:focus-visible + .toggle-slider { outline: 3px solid rgba(15, 118, 110, 0.22); outline-offset: 2px; }
+.settings-select { min-width: 140px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 9px; outline: none; background: var(--surface); color: var(--text); font-size: 13px; }.settings-select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.13); }.danger-row h3 { color: var(--danger); }
+body.dark .settings-heading { border-color: var(--border); background: linear-gradient(120deg, var(--surface), #173b42); } body.dark .settings-row:hover { background: #1d2c40; }
+@media (max-width: 560px) { .settings-row { align-items: flex-start; flex-direction: column; gap: 13px; }.settings-row > :last-child { align-self: flex-start; } }

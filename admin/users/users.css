@@ -1,0 +1,4 @@
+.table-card { animation: fade-up 0.45s ease both; }
+.empty-row td { padding: 42px; color: var(--muted); text-align: center; }
+.status-action { min-width: 78px; }
+@media (max-width: 520px) { .filters .select-control { width: 100%; } }

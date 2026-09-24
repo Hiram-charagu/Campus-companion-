@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials | Campus Companion</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="materials.css">
+</head>
+<body>
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🎓</div>
+            Campus Companion
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar" id="sidebar-avatar">JD</div>
+            <div class="sidebar-user-info">
+                <p>Logged in as</p>
+                <strong id="sidebar-name">Dr. John Doe</strong>
+                <small id="sidebar-dept">Computer Science</small>
+            </div>
+        </div>
+        <nav>
+            <p class="sidebar-section-label">Main Menu</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../dashboard/dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+                <li><a href="../materials/materials.html" class="active"><span class="nav-icon">📁</span> Materials</a></li>
+                <li><a href="../announcements/announcements.html"><span class="nav-icon">📢</span> Announcements</a></li>
+            </ul>
+            <p class="sidebar-section-label">Account</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../profile/profile.html"><span class="nav-icon">👤</span> Profile</a></li>
+                <li><a href="../notifications/notifications.html"><span class="nav-icon">🔔</span> Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../settings/settings.html"><span class="nav-icon">⚙️</span> Settings</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h2>Learning Materials</h2>
+                <p>Manage and upload course materials</p>
+            </div>
+            <div class="topbar-right">
+                <button class="btn btn-primary" id="open-upload-modal">+ Upload Material</button>
+                <a href="../notifications/notifications.html" class="topbar-icon-btn">🔔 <span class="notif-badge">3</span></a>
+                <a href="../profile/profile.html" class="topbar-avatar" id="topbar-avatar">JD</a>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="filters-bar">
+                <input type="text" id="search-input" placeholder="🔍  Search materials...">
+                <select id="filter-type">
+                    <option value="all">All Types</option>
+                    <option value="pdf">PDF</option>
+                    <option value="word">Word</option>
+                    <option value="ppt">PowerPoint</option>
+                    <option value="video">Video</option>
+                    <option value="link">External Link</option>
+                </select>
+                <select id="filter-unit">
+                    <option value="all">All Units</option>
+                    <option value="Operating Systems">Operating Systems</option>
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="Database Systems">Database Systems</option>
+                    <option value="Networks">Networks</option>
+                    <option value="Algorithms">Algorithms</option>
+                </select>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Unit</th>
+                            <th>Uploaded</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materials-tbody"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Upload Modal -->
+<div class="modal-overlay" id="upload-modal">
+    <div class="modal">
+        <h3>📁 Upload Learning Material</h3>
+        <div class="upload-area" id="upload-area">
+            <div class="upload-icon">📂</div>
+            <p>Drag & drop your file here or <span>browse</span></p>
+            <input type="file" id="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.mp4">
+            <p class="file-name" id="file-name-display"></p>
+        </div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" id="mat-title" placeholder="e.g. Week 3 Lecture Notes">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <select id="mat-type">
+                    <option value="pdf">PDF</option>
+                    <option value="word">Word</option>
+                    <option value="ppt">PowerPoint</option>
+                    <option value="video">Video</option>
+                    <option value="link">External Link</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Unit</label>
+                <select id="mat-unit">
+                    <option>Operating Systems</option>
+                    <option>Data Structures</option>
+                    <option>Database Systems</option>
+                    <option>Networks</option>
+                    <option>Algorithms</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>External Link (optional)</label>
+                <input type="url" id="mat-link" placeholder="https://...">
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-cancel" id="close-upload-modal">Cancel</button>
+            <button class="btn btn-primary" id="submit-material">Upload</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="../portal.js"></script>
+<script src="materials.js"></script>
+</body>
+</html>

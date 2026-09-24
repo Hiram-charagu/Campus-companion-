@@ -1,0 +1,1 @@
+.chat{max-width:850px;margin:auto}.ai-file-upload{display:inline-flex;align-items:center;gap:5px;border:1px dashed #91afd7;border-radius:8px;padding:7px 9px;color:var(--primary);font-size:11px;font-weight:700;cursor:pointer;margin:0 0 8px}.ai-file-upload input{display:none}.ai-file-upload+small{display:inline-block;margin-left:8px;color:var(--muted);font-size:10px}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | Campus Companion</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="announcements.css">
+</head>
+<body>
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🎓</div>
+            Campus Companion
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar" id="sidebar-avatar">JD</div>
+            <div class="sidebar-user-info">
+                <p>Logged in as</p>
+                <strong id="sidebar-name">Dr. John Doe</strong>
+                <small id="sidebar-dept">Computer Science</small>
+            </div>
+        </div>
+        <nav>
+            <p class="sidebar-section-label">Main Menu</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../dashboard/dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+                <li><a href="../materials/materials.html"><span class="nav-icon">📁</span> Materials</a></li>
+                <li><a href="../announcements/announcements.html" class="active"><span class="nav-icon">📢</span> Announcements</a></li>
+            </ul>
+            <p class="sidebar-section-label">Account</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../profile/profile.html"><span class="nav-icon">👤</span> Profile</a></li>
+                <li><a href="../notifications/notifications.html"><span class="nav-icon">🔔</span> Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../settings/settings.html"><span class="nav-icon">⚙️</span> Settings</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h2>Announcements</h2>
+                <p>Post notices to your students</p>
+            </div>
+            <div class="topbar-right">
+                <button class="btn btn-primary" id="open-ann-modal">+ New Announcement</button>
+                <a href="../notifications/notifications.html" class="topbar-icon-btn">🔔 <span class="notif-badge">3</span></a>
+                <a href="../profile/profile.html" class="topbar-avatar" id="topbar-avatar">JD</a>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="filter-tabs">
+                <button class="tab active" data-filter="all">All</button>
+                <button class="tab" data-filter="cancellation">🚫 Cancellations</button>
+                <button class="tab" data-filter="makeup">🔄 Make-up</button>
+                <button class="tab" data-filter="cat">📝 CAT Dates</button>
+                <button class="tab" data-filter="presentation">🎤 Presentations</button>
+            </div>
+
+            <div class="announcement-list" id="announcement-list"></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="ann-modal">
+    <div class="modal">
+        <h3>📢 Post Announcement</h3>
+        <div class="form-group modal-title-field">
+            <label>Title</label>
+            <input type="text" id="ann-title" placeholder="e.g. Lecture Cancelled - Friday">
+        </div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Category</label>
+                <select id="ann-category">
+                    <option value="cancellation">Lecture Cancellation</option>
+                    <option value="makeup">Make-up Class</option>
+                    <option value="cat">CAT Date</option>
+                    <option value="presentation">Project Presentation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Unit</label>
+                <select id="ann-unit">
+                    <option>Operating Systems</option>
+                    <option>Data Structures</option>
+                    <option>Database Systems</option>
+                    <option>Networks</option>
+                    <option>Algorithms</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group modal-message-field">
+            <label>Message</label>
+            <textarea id="ann-message" rows="4" placeholder="Write your announcement here..."></textarea>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-cancel" id="close-ann-modal">Cancel</button>
+            <button class="btn btn-primary" id="submit-ann">Post</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="../portal.js"></script>
+<script src="announcements.js"></script>
+</body>
+</html>

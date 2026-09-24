@@ -1,0 +1,16 @@
+.content { max-width: 1060px; }
+.notification-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 19px; padding: 20px 22px; border: 1px solid #b7f4ec; border-radius: var(--radius-md); background: linear-gradient(120deg, #fff, #f0fdfa); box-shadow: var(--shadow-sm); animation: fade-up 0.35s ease both; }
+.notification-heading h2 { font-size: 18px; }
+.notification-list { display: grid; gap: 12px; perspective: 900px; }
+.notification-item { position: relative; display: flex; align-items: flex-start; gap: 15px; padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-sm); cursor: pointer; animation: fade-up 0.4s ease both; transition: var(--transition); }
+.notification-item.unread { border-color: #99f6e4; background: linear-gradient(100deg, #f0fdfa, var(--surface) 72%); }
+.notification-item::before { position: absolute; top: 0; bottom: 0; left: 0; width: 4px; border-radius: 12px 0 0 12px; background: transparent; content: ''; }
+.notification-item.unread::before { background: var(--primary); }
+.notification-item:hover { transform: translateY(-3px) rotateX(1deg); box-shadow: var(--shadow-md); }
+.notification-icon { display: grid; width: 43px; height: 43px; flex: 0 0 43px; place-items: center; border-radius: 12px; font-size: 19px; }
+.notification-icon.teal { background: #ccfbf1; }.notification-icon.blue { background: #dbeafe; }.notification-icon.amber { background: #fef3c7; }.notification-icon.green { background: #dcfce7; }
+.notification-content { flex: 1; }.notification-content h3 { font-size: 13px; }.notification-content p { margin-top: 5px; color: var(--muted); font-size: 12.5px; line-height: 1.55; }.notification-time { display: block; margin-top: 9px; color: #94a3b8; font-size: 11px; }
+.unread-dot { width: 9px; height: 9px; margin-top: 6px; flex: 0 0 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 5px var(--primary-light); }
+.empty-state { padding: 50px; border: 1px dashed var(--border); border-radius: var(--radius-md); color: var(--muted); text-align: center; }
+body.dark .notification-heading { background: linear-gradient(120deg, var(--surface), #173b42); border-color: var(--border); } body.dark .notification-item.unread { background: linear-gradient(100deg, #173b42, var(--surface) 72%); }
+@media (max-width: 560px) { .notification-heading { align-items: flex-start; flex-direction: column; }.notification-heading .btn { width: 100%; } }

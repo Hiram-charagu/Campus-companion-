@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Campus Companion</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">🎓</div>
+            Campus Companion
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar" id="sidebar-avatar">JD</div>
+            <div class="sidebar-user-info">
+                <p>Logged in as</p>
+                <strong id="sidebar-name">Dr. John Doe</strong>
+                <small id="sidebar-dept">Computer Science</small>
+            </div>
+        </div>
+        <nav>
+            <p class="sidebar-section-label">Main Menu</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../dashboard/dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+                <li><a href="../materials/materials.html"><span class="nav-icon">📁</span> Materials</a></li>
+                <li><a href="../announcements/announcements.html"><span class="nav-icon">📢</span> Announcements</a></li>
+            </ul>
+            <p class="sidebar-section-label">Account</p>
+            <ul class="sidebar-nav stagger">
+                <li><a href="../profile/profile.html"><span class="nav-icon">👤</span> Profile</a></li>
+                <li><a href="../notifications/notifications.html"><span class="nav-icon">🔔</span> Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="settings.html" class="active"><span class="nav-icon">⚙️</span> Settings</a>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h2>Settings</h2>
+                <p>Tailor Campus Companion to your workflow</p>
+            </div>
+            <div class="topbar-right">
+                <a href="../notifications/notifications.html" class="topbar-icon-btn" aria-label="Notifications">
+                    🔔 <span class="notif-badge">3</span>
+                </a>
+                <a href="../profile/profile.html" class="topbar-avatar" id="topbar-avatar" aria-label="Open profile">JD</a>
+            </div>
+        </header>
+
+        <section class="content">
+            <article class="settings-card">
+                <div class="settings-card-header">
+                    <span class="settings-icon">🔔</span>
+                    <div>
+                        <p class="eyebrow">Alerts</p>
+                        <h3>Notification preferences</h3>
+                    </div>
+                </div>
+                <div class="settings-list">
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Admin announcements</p><span>Receive campus-wide notices from the administration.</span></div>
+                        <label class="toggle"><input type="checkbox" id="notif-admin" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Material upload confirmation</p><span>Know when learning materials are visible to students.</span></div>
+                        <label class="toggle"><input type="checkbox" id="notif-upload" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-info"><p>CAT and exam reminders</p><span>Get reminders before scheduled assessments.</span></div>
+                        <label class="toggle"><input type="checkbox" id="notif-cat" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Email notifications</p><span>Also receive important updates by email.</span></div>
+                        <label class="toggle"><input type="checkbox" id="notif-email"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </article>
+
+            <article class="settings-card">
+                <div class="settings-card-header">
+                    <span class="settings-icon">🎨</span>
+                    <div>
+                        <p class="eyebrow">Display</p>
+                        <h3>Appearance</h3>
+                    </div>
+                </div>
+                <div class="settings-list">
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Dark mode</p><span>Use a softer dark colour scheme across the portal.</span></div>
+                        <label class="toggle"><input type="checkbox" id="dark-mode"><span class="slider"></span></label>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Compact sidebar</p><span>Reduce the sidebar to icons when you need more room.</span></div>
+                        <label class="toggle"><input type="checkbox" id="compact-sidebar"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </article>
+
+            <article class="settings-card">
+                <div class="settings-card-header">
+                    <span class="settings-icon">👤</span>
+                    <div>
+                        <p class="eyebrow">Account</p>
+                        <h3>Profile and language</h3>
+                    </div>
+                </div>
+                <div class="settings-list">
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Edit profile</p><span>Update your name, department, contact details, and photo.</span></div>
+                        <a href="../profile/profile.html" class="btn-link">Go to profile <span>→</span></a>
+                    </div>
+                    <div class="settings-row">
+                        <div class="settings-info"><p>Language</p><span>Choose the language used for the portal interface.</span></div>
+                        <select id="language-select" aria-label="Preferred language">
+                            <option value="en">English</option>
+                            <option value="sw">Swahili</option>
+                            <option value="fr">French</option>
+                        </select>
+                    </div>
+                    <div class="settings-row danger-row">
+                        <div class="settings-info"><p>Log out</p><span>End this local portal session.</span></div>
+                        <button class="btn-danger" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="../portal.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>
